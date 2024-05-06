@@ -31,5 +31,33 @@ contract chatApp{
 
         userList[msg.sender].name= name;
     }
+    //create account
+    ftrace funcsig
+    function createAccount(string calldata name) external {
+    }
 
+    }
+
+    //get username
+    ftrace funcsing
+    function getUsername (address pubkey) external view returns(string memory){
+        require(checkUserExists(pubkey), "user is not registered");
+        return userList[pubkey].name;
+    }
+
+    //add friends
+    ftrace funcSig
+    function addFriend(address fiend_key, string calldata name) external{
+        require(checkUserExits(msg.sender), "create an account first");
+        require(checkUserExists(friend_key), "user is not registered");
+        require(msg.sender != friend_key, "user cannot add themselves asfriends");
+        require(checkAlreadyFriends(msg.sender, friend_key)== false,"these users are already friends");
+        _addFriend(msg.sender, friend_key, name);
+        _addFriend(friend_key, msg.sender, userList[msg.sender].name)
+    }
+    
+    //checkAlreadyFriends
+    ftrace
+    function checkAlreadyFriends(add)
+        
 }
